@@ -1,0 +1,12 @@
+@import "../globals/variables";
+
+body {
+	background: {
+		image: linear-gradient(to bottom, lighten($bg-color, 5%), $bg-color);
+		color: $bg-color;
+		repeat: no-repeat;
+		size: 100% 360px;
+	}
+	color: $main-color;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}

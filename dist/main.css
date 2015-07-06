@@ -1,0 +1,40 @@
+body {
+  background-image: linear-gradient(to bottom, #332c42, #272233);
+  background-color: #272233;
+  background-repeat: no-repeat;
+  background-size: 100% 360px;
+  color: #59468b;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif; }
+
+.drop-area {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: 50% 50%; }
+  .drop-area::before {
+    content: "Drop your image here";
+    color: #59468b;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); }
+  .drop-area.drag {
+    background-color: #3e3652; }
+
+.ui-bordered {
+  border: 2px solid; }
+
+.ui-main-color {
+  color: #59468b; }
+
+.ui-sec-color {
+  color: #18a6e2; }
+
+.ui-tert-color {
+  color: #364753; }
+
+.ui-margins {
+  margin: 1em; }
+
+/*# sourceMappingURL=main.css.map */

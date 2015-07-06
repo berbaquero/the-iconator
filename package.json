@@ -1,0 +1,35 @@
+{
+  "name": "the-iconator",
+  "version": "0.0.1",
+  "description": "A web-app to quickly get all the Firefox OS app icon sizes from your big image",
+  "appDir": "./app",
+  "buildDir": "./dist",
+  "templatesDir": "./app/templates",
+  "scripts": {
+    "clean": "rm -r $npm_package_buildDir; mkdir $npm_package_buildDir;",
+    "build-scripts": "browserify $npm_package_appDir/scripts/main.jsx -t babelify | uglifyjs -c > $npm_package_buildDir/main.js",
+    "watch-scripts": "watchify -t babelify $npm_package_appDir/scripts/main.jsx -o $npm_package_buildDir/main.js -v",
+    "build-styles": "sass --update --force --style compressed $npm_package_appDir/styles:$npm_package_buildDir",
+    "watch-styles": "sass --watch $npm_package_appDir/styles:$npm_package_buildDir",
+    "build-statics": "node build",
+    "watch-statics": "chokidar 'app/templates/*.jsx' -c 'node build'",
+    "start": "npm run clean; npm run watch-styles & npm run watch-scripts & npm run watch-statics",
+    "build": "npm run clean; npm run build-styles; npm run build-scripts; npm run build-statics"
+  },
+  "dependencies": {
+    "babel-core": "^5.5.6",
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.3",
+    "chalk": "^1.1.0",
+    "chokidar-cli": "^0.3.0",
+    "drag-drop": "^2.2.3",
+    "glob": "^5.0.10",
+    "mkdirp": "^0.5.1",
+    "pica": "^1.0.7",
+    "react": "^0.13.3",
+    "uglify-js": "^2.4.23",
+    "watchify": "^3.2.1"
+  },
+  "author": "Bernardo Baquero Stand",
+  "license": "MIT"
+}

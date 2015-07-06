@@ -1,0 +1,21 @@
+@import "../globals/variables";
+
+.ui-bordered {
+	border: 2px solid;
+}
+
+.ui-main-color {
+	color: $main-color;
+}
+
+.ui-sec-color {
+	color: $secondary-color;
+}
+
+.ui-tert-color {
+	color: $tertiary-color;
+}
+
+.ui-margins {
+	margin: 1em;
+}

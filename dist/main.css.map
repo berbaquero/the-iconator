@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,IAAK;EAEH,gBAAK,EAAE,4CAA6D;EACpE,gBAAK,ECLW,OAAO;EDMvB,iBAAM,EAAE,SAAS;EACjB,eAAI,EAAE,UAAU;EAEjB,KAAK,ECRY,OAAO;EDSxB,WAAW,EAAE,uCAAuC;;AEPrD,UAAW;ECDH,KAAK,EDEE,KAAK;ECDZ,MAAM,EDCQ,KAAK;EAC1B,QAAQ,EAAE,QAAQ;EAEjB,iBAAM,EAAE,SAAS;EACjB,mBAAQ,EAAE,OAAO;EAGlB,kBAAU;IACT,OAAO,EAAE,sBAAsB;IAC/B,KAAK,EDZW,OAAO;ICavB,QAAQ,EAAE,QAAQ;IAClB,GAAG,EAAE,GAAG;IACR,IAAI,EAAE,GAAG;IACT,SAAS,EAAE,iCAAiC;EAG7C,eAAO;IACN,gBAAgB,EAAE,OAAuB;;AEnB3C,YAAa;EACZ,MAAM,EAAE,SAAS;;AAGlB,cAAe;EACd,KAAK,EHNY,OAAO;;AGSzB,aAAc;EACb,KAAK,EHTY,OAAO;;AGYzB,cAAe;EACd,KAAK,EHZY,OAAO;;AGezB,WAAY;EACX,MAAM,EAAE,GAAG",
+"sources": ["../app/styles/components/_body.scss","../app/styles/globals/_variables.scss","../app/styles/components/_drop-area.scss","../app/styles/globals/_mixins.scss","../app/styles/modules/_UI-helpers.scss"],
+"names": [],
+"file": "main.css"
+}
