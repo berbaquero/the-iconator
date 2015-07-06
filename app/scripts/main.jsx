@@ -42,7 +42,6 @@ const renderFromCanvas = (initialCanvas, sizeIndex) => {
 	// Create new, smaller canvas
 	const newSize = imageSizes[sizeIndex - 1];
 	const newSizeCanvas = document.createElement('canvas');
-	const newSizeContext = newSizeCanvas.getContext('2d');
 	newSizeCanvas.height = newSize;
 	newSizeCanvas.width = newSize;
 
