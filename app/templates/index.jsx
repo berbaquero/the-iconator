@@ -4,8 +4,8 @@ import imageSizes from '../scripts/modules/imageSizes.js';
 
 const Index = React.createClass({
 
-	scripts: ['/dist/main.js'],
-	styles: ['/dist/main.css'],
+	scripts: ['dist/main.js'],
+	styles: ['dist/main.css'],
 	title: 'The Iconator',
 	description: 'Simply resize your icons for Firefox OS apps',
 
