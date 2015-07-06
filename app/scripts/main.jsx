@@ -1,14 +1,17 @@
 import dragDrop from 'drag-drop/buffer';
-import renderImage from './modules/renderImage.js';
 import imageSizes from './modules/imageSizes.js';
+import ImageResult from './components/ImageResult.jsx';
+import pica from 'pica';
+import React from 'react';
 
-const dropContainer = '.js-image-drop-area';
+const dropContainerClass = '.js-image-drop-area',
+	  dropContainer = document.querySelector(dropContainerClass);
 
-dragDrop(dropContainer, (files) => {
+dragDrop(dropContainerClass, (files) => {
 	const file = files[0];
 	const base64Image = file.toString('base64');
 
-	document.querySelector(dropContainer).style.backgroundImage = 'url(data:image/png;base64,' + base64Image + ')';
+	dropContainer.style.backgroundImage = 'url(data:image/png;base64,' + base64Image + ')';
 
 	renderImageFromCanvas(base64Image);
 });
@@ -36,23 +39,32 @@ const renderFromCanvas = (initialCanvas, sizeIndex) => {
 		return;
 	}
 
+	// Create new, smaller canvas
 	const newSize = imageSizes[sizeIndex - 1];
 	const newSizeCanvas = document.createElement('canvas');
 	const newSizeContext = newSizeCanvas.getContext('2d');
-
 	newSizeCanvas.height = newSize;
 	newSizeCanvas.width = newSize;
 
-	newSizeContext.drawImage(
-		initialCanvas,
-		0, 0, initialCanvas.width, initialCanvas.height,
-		0, 0, newSizeCanvas.width, newSizeCanvas.height
-	);
+	// Run the down-scaling
+	pica.resizeCanvas(
+		initialCanvas, // source
+		newSizeCanvas, // target
+		{ alpha: true }, // transparency support
+		(err) => {
+			// When done
+			printImage(newSize, newSizeCanvas);
+			 // Prepare for next size
+			sizeIndex--;
+			// and go again
+			renderFromCanvas(newSizeCanvas, sizeIndex);
+		});
+};
 
-	const resultImage = document.querySelector('.js-result-' + newSize);
-	resultImage.src = newSizeCanvas.toDataURL('image/png');
-
-	sizeIndex--;
-
-	renderFromCanvas(newSizeCanvas, sizeIndex);
+// Prints the canvas to the Image element on the DOM
+const printImage = (size, canvas) => {
+	React.render(
+		<ImageResult size={size}
+					 dataURL={canvas.toDataURL('image/png')} />,
+		document.getElementsByClassName('js-result-' + size)[0]);
 };

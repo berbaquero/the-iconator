@@ -1,17 +1,22 @@
 @import "../globals/mixins";
 @import "../globals/variables";
 
+$width: 400px;
+
 .drop-area {
-	@include size(400px, 400px);
+	@include size($width);
 	position: relative;
+	margin: 0 auto;
 	background: {
-		repeat: no-repeat;
+		color: rgba($secondary-color, .1);
 		position: 50% 50%;
+		size: 100%;
+		repeat: no-repeat;
 	};
 
 	&::before {
-		content: "Drop your image here";
-		color: $main-color;
+		content: attr(data-label);
+		color: currentColor;
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -19,6 +24,11 @@
 	}
 
 	&.drag {
-		background-color: lighten($bg-color, 10%);
+		background-color: darken($secondary-color, 30%);
+	}
+
+	&__container {
+		width: $width;
+		margin-bottom: 3em;
 	}
 }

@@ -1,0 +1,18 @@
+@import "../globals/variables";
+
+.result-item {
+
+	&__label {
+		background-color: rgba($secondary-color, .01);
+		margin-bottom: 5px;
+		color: $text-color;
+	}
+
+	&__img {
+		display: block;
+
+		&:hover {
+			color: $secondary-color;
+		}
+	}
+}

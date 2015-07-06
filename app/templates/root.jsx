@@ -8,6 +8,7 @@ const Root = React.createClass({
 		return (
 			<html>
 				<Head title={this.props.title}
+					  description={this.props.description}
 					  styles={this.props.styles}/>
 
 				<Body scripts={this.props.scripts}>

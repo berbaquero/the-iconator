@@ -7,32 +7,47 @@ const Index = React.createClass({
 	scripts: ['/dist/main.js'],
 	styles: ['/dist/main.css'],
 	title: 'The Iconator',
+	description: 'Simply resize your icons for Firefox OS apps',
 
 	render() {
 
 		const resultImages = imageSizes.map((size, index) =>
-				<img className={'js-result-' + size + ' ui-bordered ui-tert-color ui-margins'}
-					 width={size}
-					 height={size}
-					 key={index}
-					 src="data:image/jpeg;base64,0=="/>
+				<div style={{display: 'inline-block', verticalAlign: 'top'}}
+					 className="ui-margins-y ui-margin-r">
+
+					<div className="result-item__label">
+						{size + 'x' + size}
+					</div>
+
+					<div className={'js-result-' + size + ' ui-bordered ui-bg-main-alpha result-item'}
+						 style={{width: size, height: size}}
+						 key={index}></div>
+				</div>
 		);
 
 		return (
 			<Root scripts={this.scripts}
 				  styles={this.styles}
-				  title={this.title}>
+				  title={this.title}
+				  description={this.description}>
 
-				<header>
-					<h1>{this.title}</h1>
+				<header className='ui-bordered-b'>
+					<span className='header-title'>{this.title}</span>
 				</header>
 
-				<section>
-					<div className="js-image-drop-area drop-area ui-bordered">
+				<section className="drop-area__container ui-centered">
+					<div className="ui-sec-color ui-margins-y">Drop your icon here</div>
+
+					<div className="js-image-drop-area drop-area ui-bordered ui-bordered--dash ui-sec-color"
+						 title="Drop your icon here">
 					</div>
-					<input className="js-main-button-input"
-						   type="file"/>
 				</section>
+
+				<div className="description ui-margins-y ui-bordered-b">
+					Results
+					<span className="ui-sec-color"
+						  style={{textAlign: 'right', width: '100%'}}>Click the icons to download them</span>
+				</div>
 
 				<section className="results">
 					{resultImages}

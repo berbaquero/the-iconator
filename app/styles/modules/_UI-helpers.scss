@@ -1,21 +1,55 @@
 @import "../globals/variables";
 
 .ui-bordered {
-	border: 2px solid;
+	border: 1px solid;
+
+	&--dash {
+		border-style: dashed;
+	}
+}
+
+.ui-bordered-b {
+	border-bottom: 2px solid;
 }
 
 .ui-main-color {
-	color: $main-color;
-}
+	 color: $main-color;
+ }
 
 .ui-sec-color {
 	color: $secondary-color;
 }
 
-.ui-tert-color {
-	color: $tertiary-color;
+.ui-bg-main-alpha {
+	background-color: rgba($main-color, .1);
 }
 
-.ui-margins {
+.ui-bg-sec-alpha {
+	background-color: rgba($secondary-color, .01);
+}
+
+.ui-margins-y {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.ui-margin-r {
+	margin-right: 2em;
+}
+
+.ui-centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ui-link {
+	text-decoration: none;
+	width: 100%;
+	text-align: center;
+	display: block;
+}
+
+.ui-bottom-margin {
 	margin: 1em;
 }
