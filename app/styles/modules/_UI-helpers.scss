@@ -1,4 +1,5 @@
 @import "../globals/variables";
+@import "../globals/mixins";
 
 .ui-bordered {
 	border: 1px solid;
@@ -43,6 +44,25 @@
 	margin-right: auto;
 }
 
+.ui-full-width {
+	width: 100%;
+}
+
 .ui-bottom-margin {
 	margin: 1em;
+}
+
+.ui-heading {
+	font-weight: 500;
+	color: $text-color;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+
+.ui-link {
+	text-decoration: none;
+
+	@include hocus {
+		text-decoration: underline;
+	}
 }
