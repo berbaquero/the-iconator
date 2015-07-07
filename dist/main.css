@@ -4,7 +4,7 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 360px;
   color: #755cb4;
-  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, sans-serif;
   margin: 1em 1em 5em; }
 
 .drop-area {
@@ -36,7 +36,9 @@ header {
 .header-title {
   line-height: 3em;
   font-weight: 500;
-  color: #ffffff; }
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 5px; }
 
 .result-item__label {
   background-color: rgba(24, 166, 226, 0.01);
