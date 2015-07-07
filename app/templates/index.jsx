@@ -7,13 +7,14 @@ const Index = React.createClass({
 	scripts: ['dist/main.js'],
 	styles: ['dist/main.css'],
 	title: 'The Iconator',
-	description: 'Simply resize your icons for Firefox OS apps',
+	description: 'Simple tool to resize your icons for Firefox OS apps',
 
 	render() {
 
 		const resultImages = imageSizes.map((size, index) =>
 				<div style={{display: 'inline-block', verticalAlign: 'top'}}
-					 className="ui-margins-y ui-margin-r">
+					 className="ui-margins-y ui-margin-r"
+					 key={index}>
 
 					<div className="result-item__label">
 						{size + 'x' + size}
@@ -32,11 +33,12 @@ const Index = React.createClass({
 				  description={this.description}>
 
 				<header className='ui-bordered-b'>
-					<span className='header-title'>{this.title}</span>
+					<a className='header-title ui-heading ui-link'
+					   href='/'>{this.title}</a>
 				</header>
 
-				<section className="drop-area__container ui-centered">
-					<div className="ui-sec-color ui-margins-y">Drop your icon here</div>
+				<section className="drop-area__container ui-centered ui-full-width">
+					<div className="ui-sec-color ui-margins-y">1. Drop your icon here</div>
 
 					<div className="js-image-drop-area drop-area ui-bordered ui-bordered--dash ui-sec-color"
 						 title="Drop your icon here">
@@ -44,14 +46,20 @@ const Index = React.createClass({
 				</section>
 
 				<div className="description ui-margins-y ui-bordered-b">
-					Results
-					<span className="ui-sec-color"
-						  style={{textAlign: 'right', width: '100%'}}>Click the icons to download them</span>
+					<span className="ui-sec-color">2. Click the resulting icons to download them</span>
 				</div>
 
 				<section className="results">
 					{resultImages}
 				</section>
+
+				<footer>
+					<div>The Iconator — Swiftly and easily generate all the icon sizes for your Firefox Open Web App.</div>
+					<div className='ui-margins-y'>
+						<a className='ui-heading ui-link'
+						   href='http://berbaquero.com/'>Bernardo Baquero Stand</a>
+					</div>
+				</footer>
 
 			</Root>
 		)

@@ -1,16 +1,14 @@
 @import "../globals/mixins";
 @import "../globals/variables";
 
-$width: 400px;
-
 .drop-area {
-	@include size($width);
+	height: 360px;
 	position: relative;
 	margin: 0 auto;
 	background: {
 		color: rgba($secondary-color, .1);
 		position: 50% 50%;
-		size: 100%;
+		size: auto 100%;
 		repeat: no-repeat;
 	};
 
@@ -28,7 +26,6 @@ $width: 400px;
 	}
 
 	&__container {
-		width: $width;
 		margin-bottom: 3em;
 	}
 }
