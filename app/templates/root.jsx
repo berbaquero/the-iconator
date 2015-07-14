@@ -9,7 +9,8 @@ const Root = React.createClass({
 			<html>
 				<Head title={this.props.title}
 					  description={this.props.description}
-					  styles={this.props.styles}/>
+					  styles={this.props.styles}
+					  faviconURL='imgs/icons/icon32.png' />
 
 				<Body scripts={this.props.scripts}>
 					{this.props.children}
