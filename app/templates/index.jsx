@@ -7,7 +7,7 @@ const Index = React.createClass({
 	scripts: ['dist/main.js'],
 	styles: ['dist/main.css'],
 	title: 'The Iconator',
-	description: 'Simple tool to resize your icons for Firefox OS apps',
+	description: 'Generate icons in all sizes for your Firefox OS Apps',
 
 	render() {
 
